@@ -13,3 +13,7 @@
         display: block;
         height: auto;
     }
+
+        .gallery-image:hover {
+            transform: scale(1.03);
+        }

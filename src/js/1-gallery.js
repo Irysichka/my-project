@@ -1,5 +1,5 @@
 
-import SimpleLightbox from "simplelightbox";
+import SimpleLightbox from 'simplelightbox';
 
 import "simplelightbox/dist/simple-lightbox.min.css";
 
@@ -79,12 +79,13 @@ gallery.insertAdjacentHTML("beforeend", createMarkup(images));
 function createMarkup(arr) {
     return arr.map(item => `
      <li class="gallery-item">
-     <a class="gallery-link" href="${item.original}"></a>
-     <img class="gallery-image" src="${item.preview}" data-source="${item.original}" alt="${item.description}" width="360"> 
+     <a class="gallery-link" href="${item.original}">
+     <img class="gallery-image" src="${item.preview}" data-source="${item.original}" alt="${item.description}" width="360"> </a>
+     
      </li>`).join("");
 }
 
-const lightbox = new SimpleLightbox('.gallery a', {
+new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });

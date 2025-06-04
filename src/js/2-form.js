@@ -17,7 +17,7 @@ if (dataSave) {
 form.addEventListener("input", event => {
     const {name, value} = event.target;
     if (name === "email" || name === "message")
-        formData[name] = value;
+        formData[name] = value.trim();
     localStorage.setItem(KEY, JSON.stringify(formData))
 });
 

@@ -6,6 +6,14 @@ let formData = {
 const form = document.querySelector(".feedback-form");
 const KEY = "feedback-form-state";
 
+
+const dataSave = localStorage.getItem(KEY);
+if (dataSave) {
+    formData = JSON.parse(dataSave);
+    form.elements.email.value = formData.email || "";
+    form.elements.message.value = formData.message || "";
+}
+
 form.addEventListener("input", event => {
     const {name, value} = event.target;
     if (name === "email" || name === "message")
